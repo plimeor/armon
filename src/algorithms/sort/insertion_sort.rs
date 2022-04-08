@@ -31,11 +31,16 @@ pub fn insertion_sort<T, F>(list: &mut Vec<T>, compare: F) -> &mut Vec<T>
 fn test() {
     let mut arr = vec![6, 5, 4, 3, 2, 1];
     insertion_sort(&mut arr, |a, b| a.cmp(b));
-    assert_eq!(arr, vec![1, 2, 3, 4, 5, 6]);
-    insertion_sort(&mut arr, |a, b| b.cmp(a));
-    assert_eq!(arr, vec![6, 5, 4, 3, 2, 1]);
+    assert_eq!(arr, vec![1, 2, 3, 4, 5, 6], "Ascending sort");
 
-    let mut arr = vec![1];
+    insertion_sort(&mut arr, |a, b| b.cmp(a));
+    assert_eq!(arr, vec![6, 5, 4, 3, 2, 1], "Descending sort");
+
+    arr = vec![1];
     insertion_sort(&mut arr, |a, b| a.cmp(b));
-    assert_eq!(arr, vec![1])
+    assert_eq!(arr, vec![1], "Only 1 element");
+
+    arr = vec![];
+    insertion_sort(&mut arr, |a, b| a.cmp(b));
+    assert_eq!(arr, vec![], "Empty vec")
 }

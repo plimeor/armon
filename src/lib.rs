@@ -1,2 +1,5 @@
-pub use algorithms;
-pub use data_structures;
+pub use algorithms::*;
+
+mod algorithms;
+
+

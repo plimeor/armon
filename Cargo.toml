@@ -5,11 +5,3 @@ edition = "2021"
 description = "A collection of algorithms and data structures"
 license = "MIT"
 
-[workspace]
-members = ["algorithms", "data_structures"]
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-algorithms = { path = "./algorithms" }
-data_structures = { path = "./data_structures" }
